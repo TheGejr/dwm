@@ -59,23 +59,29 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbg_col, "-nf", normfg_col, "-sb", selbg_col, "-sf", selfg_col, NULL };
-static const char *termcmd[]    = { "st", NULL };
+static const char *dmenucmd[]	 = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbg_col, "-nf", normfg_col, "-sb", selbg_col, "-sf", selfg_col, NULL };
+static const char *termcmd[]   = { "st", NULL };
 static const char *webcmd[]    = { "brave-browser-stable", NULL };
-static const char *filecmd[]    = { "thunar", NULL };
-static const char *mailcmd[]    = { "thunderbird", NULL };
-static const char *screencmd[]    = { "xfce4-screenshooter", "-r", NULL };
-static const char *lockcmd[]    = { "slock", NULL };
+static const char *filecmd[]   = { "thunar", NULL };
+static const char *mailcmd[]   = { "thunderbird", NULL };
+static const char *virtman[]   = { "virt-manager", NULL };
+static const char *vmware[]   = { "vmware-view", NULL };
+static const char *screencmd[] = { "xfce4-screenshooter", "-r", NULL };
+static const char *lockcmd[]   = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_w,	     spawn,          {.v = webcmd} },
+	{ MODKEY,                       XK_w,	     spawn,          {.v = webcmd } },
   { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filecmd } },
-	{ MODKEY|ShiftMask,             XK_m,	     spawn,          {.v = mailcmd} },
-	{ MODKEY|ShiftMask,             XK_s,	     spawn,          {.v = screencmd} },
-	{ MODKEY,                       XK_x,	     spawn,          {.v = lockcmd} },
+	{ MODKEY|ShiftMask,             XK_m,	     spawn,          {.v = mailcmd } },
+	{ MODKEY,                       XK_v,	     spawn,          {.v = virtman } },
+	{ MODKEY|ShiftMask,             XK_v,	     spawn,          {.v = vmware } },
+	{ MODKEY|ShiftMask,             XK_s,	     spawn,          {.v = screencmd } },
+	{ MODKEY,                       XK_x,	     spawn,          {.v = lockcmd } },
+  { 0,                            0xc00e9,spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+  { 0,                            0xc00ea,spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
