@@ -6,23 +6,6 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
-Since the BGRA patch haven't been merged to master branch yet. You will
-need to install it via `make'. This conflicts with the existing package
-`libXft' you will have to remove that package before installing the patch.
-
-Follow these steps:
-
-    git clone https://gitlab.freedesktop.org/mawww/libxft.git
-    cd libxft/
-    sudo xbps-install automake xorg-util-macros
-    sh autogen.sh --sysconfdir=/etc --prefix=/usr --mandir=/usr/share/man
-    sudo make clean install
-
-Patches
--------
-I use the following patches for DWM
-    centeredmaster
-    fibonacci
 
 
 Installation
