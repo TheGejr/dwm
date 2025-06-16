@@ -60,8 +60,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]	 = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbg_col, "-nf", normfg_col, "-sb", selbg_col, "-sf", selfg_col, NULL };
-static const char *termcmd[]   = { "st", NULL };
-static const char *webcmd[]    = { "brave-browser-stable", NULL };
+static const char *termcmd[]   = { "xfce4-terminal", NULL };
+static const char *webcmd[]    = { "firefox", NULL };
 static const char *filecmd[]   = { "thunar", NULL };
 static const char *mailcmd[]   = { "thunderbird", NULL };
 static const char *virtman[]   = { "virt-manager", NULL };
