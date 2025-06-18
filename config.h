@@ -66,7 +66,7 @@ static const char *filecmd[]       = { "thunar", NULL };
 static const char *virtcmd[]       = { "virt-manager", NULL };
 static const char *screenshotcmd[] = { "xfce4-screenshooter", "-r", NULL };
 static const char *lockcmd[]       = { "slock", NULL };
-static const char *signalcmd[]       = { "signal-desktop", NULL };
+static const char *signalcmd[]     = { "signal-desktop", NULL };
 
 static const char *volup_media[]   = { "amixer", "set", "Master", "2%+", NULL };
 static const char *voldown_media[] = { "amixer", "set", "Master", "2%-", NULL };
